@@ -1,10 +1,14 @@
 import React from "react";
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import validator from "validator";
 import { useDispatch, useSelector } from "react-redux";
 import useForm from "../../hooks/useForm";
 import { removeError, setError } from "../../actions/ui";
-import { startRegisterWithEmailPasswordName } from "../../actions/auth";
+import {
+  showAlert,
+  startRegisterWithEmailPasswordName,
+} from "../../actions/auth";
 
 const RegisterScreen = () => {
   const dispatch = useDispatch();
@@ -26,18 +30,18 @@ const RegisterScreen = () => {
 
   const isFormValid = () => {
     if (name.trim().length === 0) {
-      dispatch(setError("Name is requiered"));
+      Swal.fire("Error", "Name is requiered", "error");
       return false;
     } else if (!validator.isEmail(email)) {
-      dispatch(setError("Email is not valid"));
+      Swal.fire("Error", "Email is not valid", "error");
       return false;
-    } else if (password.trim() !== password2.trim() || password.length < 5) {
-      dispatch(
-        setError("Password should be at least 6 characters and match to other")
-      );
+    } else if (password.length < 5) {
+      Swal.fire("Error", "Password should be at least 6 characters", "error");
+      return false;
+    } else if (password.trim() !== password2.trim()) {
+      Swal.fire("Error", "Password should and match to other", "error");
       return false;
     }
-    dispatch(removeError());
     return true;
   };
   return (
