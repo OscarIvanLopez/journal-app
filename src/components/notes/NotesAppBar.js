@@ -1,16 +1,26 @@
-import React from 'react'
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { startSaveNote } from "../../actions/notes";
 
 const NotesAppBar = () => {
-    return (
-        <div className="notes__appbar">
-            <span>05 de octubre del 2001</span>
+  const dispatch = useDispatch();
+  const { active } = useSelector((state) => state.notes);
 
-            <div>
-                <button className="btn">Picture</button>
-                <button className="btn">Save</button>
-            </div>
-        </div>
-    )
-}
+  const handleSave = () => {
+    dispatch(startSaveNote(active));
+  };
+  return (
+    <div className="notes__appbar">
+      <span>05 de octubre del 2001</span>
 
-export default NotesAppBar
+      <div>
+        <button className="btn">Picture</button>
+        <button className="btn" onClick={handleSave}>
+          Save
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default NotesAppBar;
