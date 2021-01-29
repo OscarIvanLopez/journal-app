@@ -6,6 +6,7 @@ import { activeNote } from "../../actions/notes";
 const JournalEntry = ({ id, date, title, body, url }) => {
   const dispatch = useDispatch();
   const noteDate = moment(date);
+  
 
   const handleClick = () => {
     dispatch(
@@ -20,7 +21,7 @@ const JournalEntry = ({ id, date, title, body, url }) => {
 
   return (
     <div
-      className="journal__entry animate__animated animate__fadeInLeftBig animate__slow"
+      className="journal__entry animate__animated animate__fadeInDownBig"
       onClick={handleClick}
     >
       {url && (
