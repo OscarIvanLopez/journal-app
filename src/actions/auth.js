@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import { firebase, googleAuthProvider } from "../firebase/firebase-config";
 import { types } from "../types/types";
+import { logoutCleaning } from "./notes";
 import { finishLoading, startLoading } from "./ui";
 
 // funcion asincrona
@@ -63,10 +64,10 @@ export const startLogout = () => {
     await firebase.auth().signOut();
 
     dispatch(logout());
+    dispatch(logoutCleaning());
   };
 };
 
 export const logout = () => ({
   type: types.logout,
 });
-

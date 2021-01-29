@@ -19,7 +19,10 @@ const JournalEntry = ({ id, date, title, body, url }) => {
   };
 
   return (
-    <div className="journal__entry" onClick={handleClick}>
+    <div
+      className="journal__entry animate__animated animate__fadeInLeftBig animate__slow"
+      onClick={handleClick}
+    >
       {url && (
         <div
           className="journal__entry-picture"

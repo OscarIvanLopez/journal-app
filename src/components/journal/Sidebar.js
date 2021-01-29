@@ -2,7 +2,7 @@ import React from "react";
 import JournalEntries from "./JournalEntries";
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from "../../actions/auth";
-import { startNewNote } from "../../actions/notes";
+import { logoutCleaning, startNewNote } from "../../actions/notes";
 
 const Sidebar = () => {
   const { name } = useSelector((state) => state.auth);
@@ -16,7 +16,7 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="journal__sidebar">
+    <aside className="journal__sidebar animate__animated animate__fadeInLeftBig animate__faster">
       <div className="journal__sidebar-navbar">
         <h3 className="mt-5">
           <i className="far fa-moon"></i>
