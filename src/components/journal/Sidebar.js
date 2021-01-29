@@ -2,7 +2,7 @@ import React from "react";
 import JournalEntries from "./JournalEntries";
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from "../../actions/auth";
-import { logoutCleaning, startNewNote } from "../../actions/notes";
+import { startNewNote } from "../../actions/notes";
 
 const Sidebar = () => {
   const { name } = useSelector((state) => state.auth);

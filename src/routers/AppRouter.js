@@ -8,7 +8,7 @@ import AuthRouter from "./AuthRouter";
 import { login } from "../actions/auth";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
-import { setNotes, startLoadingNotes } from "../actions/notes";
+import { startLoadingNotes } from "../actions/notes";
 
 const AppRouter = () => {
   const dispatch = useDispatch();
