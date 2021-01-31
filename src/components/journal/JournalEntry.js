@@ -6,7 +6,6 @@ import { activeNote } from "../../actions/notes";
 const JournalEntry = ({ id, date, title, body, url }) => {
   const dispatch = useDispatch();
   const noteDate = moment(date);
-  
 
   const handleClick = () => {
     dispatch(

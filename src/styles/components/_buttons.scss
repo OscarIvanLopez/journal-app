@@ -1,7 +1,7 @@
 .btn {
   background-color: transparent;
   border: none;
-  color: white;
+  color: $font-dark;
   cursor: pointer;
   font-size: 12px;
   padding: 7px 10px 7px 10px;
@@ -18,14 +18,17 @@
 }
 
 .btn-primary {
-  background-color: $primary;
-  border-radius: 2px;
+  background-color: $btn-dark;
+  border-radius: 5px;
+  color: white;
+
+  transition: background-color 0.3s ease;
 
   &:disabled {
-    background-color: lighten($color: $primary, $amount: 15);
+    background-color: lighten($color: $btn-dark, $amount: 15);
   }
   &:hover {
-    background-color: darken($color: $primary, $amount: 15);
+    background-color: darken($color: $btn-dark, $amount: 15);
   }
 }
 

@@ -5,8 +5,16 @@
 
 html,
 body {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background: darken($color: $primary, $amount: 10);
   height: 100vh;
   width: 100vw;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
 }
 
 main {

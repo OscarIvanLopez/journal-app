@@ -1,6 +1,6 @@
 .nothing__main-content {
   align-items: center;
-  background-color: $primary;
+  background-color: darken($color: $primary, $amount: 10);
   color: white;
   display: flex;
   flex-direction: column;

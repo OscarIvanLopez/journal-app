@@ -1,36 +1,45 @@
 .auth__main {
   align-items: center;
-  background-color: $primary;
+  background-color: darken($color: $primary, $amount: 10);
   display: flex;
   justify-content: center;
   margin: 0;
   height: 100vh;
   width: 100%;
   overflow: hidden;
-
 }
 
 .auth__box-container {
-  background-color: white;
-  box-shadow: 0px 3px $dark-grey;
-  border-radius: 2px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.5)
+  );
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+  backdrop-filter: blur(2rem);
+  border-radius: 10px;
   padding: 20px;
   width: 250px;
 }
 
 .auth__title {
-  color: darken($color: $primary, $amount: 20);
+  color: $font-dark;
   margin-bottom: 20px;
 }
 
 .auth__input {
-  color: $dark-grey;
+  color: darken($color: $dark-grey, $amount: 1);
   border: 0px;
   border-bottom: 1px solid $dark-grey;
   font-size: 16px;
   margin-bottom: 10px;
   height: 20px;
   width: 100%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.0),
+    rgba(255, 255, 255, 0.0)
+  );
 
   transition: border-bottom 0.3s ease;
 

@@ -6,16 +6,21 @@
 
 .notes__appbar {
   align-items: center;
-  background-color: $primary;
+  background-color: darken($color: $primary, $amount: 10);
   color: white;
   display: flex;
   justify-content: space-between;
   padding: 10px 20px 10px 20px;
 }
 
+.notes__appbar button{
+  color: white;
+}
+
 .notes__content {
   display: flex;
   flex-direction: column;
+  background-color: white;
   height: 100%;
   padding: 20px;
 }
@@ -23,7 +28,7 @@
 .notes__title-input,
 .notes__textarea {
   border: 0;
-
+  background-color: rgba($color: white, $alpha: 0);
   &:focus {
     outline: none;
   }
